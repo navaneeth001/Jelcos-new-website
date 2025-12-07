@@ -1,13 +1,41 @@
-import React from 'react';
-import { ArrowRight, Heart } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { ArrowRight, Heart, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from './ui/button';
 
+const heroImages = [
+  "https://images.pexels.com/photos/339620/pexels-photo-339620.jpeg",
+  "https://images.pexels.com/photos/7551686/pexels-photo-7551686.jpeg",
+  "https://images.pexels.com/photos/35043676/pexels-photo-35043676.jpeg",
+  "https://images.pexels.com/photos/5206940/pexels-photo-5206940.jpeg",
+  "https://images.unsplash.com/photo-1525336778665-96f9a12c5c4f"
+];
+
 const Hero = () => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % heroImages.length);
+    }, 5000); // Change image every 5 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
   const scrollToScheduler = () => {
     const element = document.getElementById('scheduler');
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
+  };
+
+  const nextImage = () => {
+    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % heroImages.length);
+  };
+
+  const prevImage = () => {
+    setCurrentImageIndex((prevIndex) => 
+      prevIndex === 0 ? heroImages.length - 1 : prevIndex - 1
+    );
   };
 
   return (
@@ -66,20 +94,64 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Right Image */}
+          {/* Right Image Carousel */}
           <div className="relative">
-            <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-              <div className="aspect-square bg-gradient-to-br from-emerald-100 to-orange-100 flex items-center justify-center">
-                <div className="text-center p-8">
-                  <Heart size={120} className="mx-auto text-emerald-600 mb-6" strokeWidth={1.5} />
-                  <p className="text-2xl font-semibold text-gray-800">Caring for Your Loved Ones</p>
-                  <p className="text-gray-600 mt-4">With compassion and expertise</p>
-                </div>
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl group">
+              {/* Image Slideshow */}
+              <div className="relative aspect-square">
+                {heroImages.map((image, index) => (
+                  <div
+                    key={index}
+                    className={`absolute inset-0 transition-opacity duration-1000 ${
+                      index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+                    }`}
+                  >
+                    <img
+                      src={image}
+                      alt={`Healthcare service ${index + 1}`}
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Navigation Arrows */}
+              <button
+                onClick={prevImage}
+                className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-3 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300"
+                aria-label="Previous image"
+              >
+                <ChevronLeft className="text-emerald-600" size={24} />
+              </button>
+              <button
+                onClick={nextImage}
+                className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-3 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300"
+                aria-label="Next image"
+              >
+                <ChevronRight className="text-emerald-600" size={24} />
+              </button>
+
+              {/* Dots Indicator */}
+              <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex space-x-2">
+                {heroImages.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentImageIndex(index)}
+                    className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                      index === currentImageIndex
+                        ? 'bg-white w-8'
+                        : 'bg-white/50 hover:bg-white/75'
+                    }`}
+                    aria-label={`Go to image ${index + 1}`}
+                  />
+                ))}
               </div>
             </div>
             
             {/* Floating Card */}
-            <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl p-6 max-w-xs">
+            <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl p-6 max-w-xs z-10">
               <div className="flex items-center space-x-4">
                 <div className="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center">
                   <Heart className="text-emerald-600" size={24} />
