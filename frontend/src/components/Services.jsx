@@ -18,7 +18,7 @@ const Services = () => {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Our <span className="text-emerald-600">Care Services</span>
+            Our <span className="text-jelcos-dark">Care Services</span>
           </h2>
           <p className="text-lg text-gray-600">
             Comprehensive healthcare services tailored to meet your family's unique needs
@@ -32,13 +32,13 @@ const Services = () => {
             return (
               <Card 
                 key={service.id} 
-                className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-emerald-200 cursor-pointer"
+                className="group hover:shadow-xl transition-all duration-300 border-2 hover:border-jelcos-bright/30 cursor-pointer"
               >
                 <CardHeader>
-                  <div className="w-16 h-16 bg-gradient-to-br from-emerald-100 to-orange-100 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                    <IconComponent className="text-emerald-600" size={32} />
+                  <div className="w-16 h-16 bg-gradient-to-br from-jelcos-bright/20 to-orange-100 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <IconComponent className="text-jelcos-bright" size={32} />
                   </div>
-                  <CardTitle className="text-xl font-bold text-gray-900 group-hover:text-emerald-600 transition-colors">
+                  <CardTitle className="text-xl font-bold text-gray-900 group-hover:text-jelcos-dark transition-colors">
                     {service.title}
                   </CardTitle>
                   <CardDescription className="text-gray-600">
@@ -49,7 +49,7 @@ const Services = () => {
                   <ul className="space-y-2">
                     {service.features.map((feature, index) => (
                       <li key={index} className="flex items-center text-sm text-gray-700">
-                        <Check className="text-emerald-600 mr-2 flex-shrink-0" size={16} />
+                        <Check className="text-jelcos-bright mr-2 flex-shrink-0" size={16} />
                         <span>{feature}</span>
                       </li>
                     ))}

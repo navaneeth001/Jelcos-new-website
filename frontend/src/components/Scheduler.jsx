@@ -54,14 +54,14 @@ const Scheduler = () => {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Schedule an <span className="text-emerald-600">Appointment</span>
+            Schedule an <span className="text-jelcos-dark">Appointment</span>
           </h2>
           <p className="text-lg text-gray-600">
             Book your service appointment and we'll get back to you shortly
           </p>
         </div>
 
-        <div className="bg-gradient-to-br from-emerald-50 to-orange-50 rounded-3xl p-8 md:p-12 shadow-xl">
+        <div className="bg-gradient-to-br from-jelcos-light to-orange-50 rounded-3xl p-8 md:p-12 shadow-xl">
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* Name */}
             <div className="space-y-2">
@@ -76,7 +76,7 @@ const Scheduler = () => {
                 value={formData.name}
                 onChange={(e) => handleInputChange('name', e.target.value)}
                 placeholder="Enter your full name"
-                className="bg-white border-2 border-gray-200 focus:border-emerald-500 rounded-xl py-6"
+                className="bg-white border-2 border-gray-200 focus:border-jelcos-dark rounded-xl py-6"
               />
             </div>
 
@@ -94,7 +94,7 @@ const Scheduler = () => {
                   value={formData.phone}
                   onChange={(e) => handleInputChange('phone', e.target.value)}
                   placeholder="+91 XXXXXXXXXX"
-                  className="bg-white border-2 border-gray-200 focus:border-emerald-500 rounded-xl py-6"
+                  className="bg-white border-2 border-gray-200 focus:border-jelcos-dark rounded-xl py-6"
                 />
               </div>
               <div className="space-y-2">
@@ -108,7 +108,7 @@ const Scheduler = () => {
                   value={formData.email}
                   onChange={(e) => handleInputChange('email', e.target.value)}
                   placeholder="your.email@example.com"
-                  className="bg-white border-2 border-gray-200 focus:border-emerald-500 rounded-xl py-6"
+                  className="bg-white border-2 border-gray-200 focus:border-jelcos-dark rounded-xl py-6"
                 />
               </div>
             </div>
@@ -119,7 +119,7 @@ const Scheduler = () => {
                 Service Type *
               </Label>
               <Select value={formData.service} onValueChange={(value) => handleInputChange('service', value)} required>
-                <SelectTrigger className="bg-white border-2 border-gray-200 focus:border-emerald-500 rounded-xl py-6">
+                <SelectTrigger className="bg-white border-2 border-gray-200 focus:border-jelcos-dark rounded-xl py-6">
                   <SelectValue placeholder="Select a service" />
                 </SelectTrigger>
                 <SelectContent>
@@ -143,7 +143,7 @@ const Scheduler = () => {
                   <PopoverTrigger asChild>
                     <Button
                       variant="outline"
-                      className="w-full justify-start text-left font-normal bg-white border-2 border-gray-200 hover:border-emerald-500 rounded-xl py-6"
+                      className="w-full justify-start text-left font-normal bg-white border-2 border-gray-200 hover:border-jelcos-dark rounded-xl py-6"
                     >
                       {date ? format(date, 'PPP') : <span className="text-gray-500">Pick a date</span>}
                     </Button>
@@ -166,7 +166,7 @@ const Scheduler = () => {
                   Preferred Time *
                 </Label>
                 <Select value={formData.timeSlot} onValueChange={(value) => handleInputChange('timeSlot', value)} required>
-                  <SelectTrigger className="bg-white border-2 border-gray-200 focus:border-emerald-500 rounded-xl py-6">
+                  <SelectTrigger className="bg-white border-2 border-gray-200 focus:border-jelcos-dark rounded-xl py-6">
                     <SelectValue placeholder="Select time" />
                   </SelectTrigger>
                   <SelectContent>
@@ -183,7 +183,7 @@ const Scheduler = () => {
             {/* Submit Button */}
             <Button 
               type="submit"
-              className="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-6 rounded-xl text-lg font-medium shadow-lg hover:shadow-xl transition-all"
+              className="w-full bg-jelcos-dark hover:bg-jelcos-darker text-white py-6 rounded-xl text-lg font-medium shadow-lg hover:shadow-xl transition-all"
             >
               Schedule Appointment
             </Button>

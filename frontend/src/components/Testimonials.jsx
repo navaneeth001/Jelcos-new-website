@@ -1,15 +1,18 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Star, Quote } from 'lucide-react';
 import { Card, CardContent } from './ui/card';
 import { testimonials } from '../mockData';
 
 const Testimonials = () => {
+  const navigate = useNavigate();
+
   return (
     <section id="testimonials" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            What Our <span className="text-emerald-600">Clients Say</span>
+            What Our <span className="text-jelcos-dark">Clients Say</span>
           </h2>
           <p className="text-lg text-gray-600">
             Real experiences from families who trust us with their loved ones
@@ -20,11 +23,11 @@ const Testimonials = () => {
           {testimonials.map((testimonial) => (
             <Card 
               key={testimonial.id} 
-              className="border-2 border-gray-100 hover:border-emerald-200 hover:shadow-xl transition-all duration-300 relative overflow-hidden"
+              className="border-2 border-gray-100 hover:border-jelcos-bright/30 hover:shadow-xl transition-all duration-300 relative overflow-hidden"
             >
               {/* Quote Icon */}
               <div className="absolute top-4 right-4 opacity-10">
-                <Quote size={60} className="text-emerald-600" />
+                <Quote size={60} className="text-jelcos-bright" />
               </div>
               
               <CardContent className="p-8">
@@ -51,8 +54,8 @@ const Testimonials = () => {
                     <div className="font-semibold text-gray-900">{testimonial.name}</div>
                     <div className="text-sm text-gray-500">{testimonial.date}</div>
                   </div>
-                  <div className="w-12 h-12 bg-gradient-to-br from-emerald-100 to-orange-100 rounded-full flex items-center justify-center">
-                    <span className="text-emerald-600 font-bold text-lg">
+                  <div className="w-12 h-12 bg-gradient-to-br from-jelcos-bright/20 to-orange-100 rounded-full flex items-center justify-center">
+                    <span className="text-jelcos-dark font-bold text-lg">
                       {testimonial.name.charAt(0)}
                     </span>
                   </div>
@@ -66,8 +69,8 @@ const Testimonials = () => {
         <div className="text-center mt-12">
           <p className="text-gray-600 mb-6">Join hundreds of satisfied families</p>
           <button 
-            onClick={() => document.getElementById('scheduler').scrollIntoView({ behavior: 'smooth' })}
-            className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-xl font-medium shadow-lg hover:shadow-xl transition-all"
+            onClick={() => navigate('/book')}
+            className="bg-jelcos-dark hover:bg-jelcos-darker text-white px-8 py-4 rounded-xl font-medium shadow-lg hover:shadow-xl transition-all"
           >
             Book Your Service Today
           </button>

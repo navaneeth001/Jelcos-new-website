@@ -1,5 +1,6 @@
 import React from 'react';
-import { Phone, Mail, MapPin, Clock, Heart } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Phone, Mail, MapPin, Heart, Clock } from 'lucide-react';
 import { contactInfo } from '../mockData';
 
 const Footer = () => {
@@ -12,8 +13,8 @@ const Footer = () => {
           {/* Brand */}
           <div>
             <div className="flex items-center mb-4">
-              <h3 className="text-2xl font-bold text-emerald-400">Jelcos</h3>
-              <Heart className="ml-2 fill-emerald-400 text-emerald-400" size={20} />
+              <h3 className="text-2xl font-bold text-jelcos-bright">Jelcos</h3>
+              <Heart className="ml-2 fill-jelcos-bright text-jelcos-bright" size={20} />
             </div>
             <p className="text-gray-400 leading-relaxed">
               Providing compassionate and professional home nursing services across Kerala.
@@ -22,13 +23,13 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h4 className="text-lg font-semibold mb-4 text-emerald-400">Contact Us</h4>
+            <h4 className="text-lg font-semibold mb-4 text-jelcos-bright">Contact Us</h4>
             <div className="space-y-3">
-              <a href={`tel:${contactInfo.phone}`} className="flex items-start hover:text-emerald-400 transition-colors">
+              <a href={`tel:${contactInfo.phone}`} className="flex items-start hover:text-jelcos-bright transition-colors">
                 <Phone size={18} className="mr-3 mt-1 flex-shrink-0" />
                 <span>{contactInfo.phone}</span>
               </a>
-              <a href={`mailto:${contactInfo.email}`} className="flex items-start hover:text-emerald-400 transition-colors">
+              <a href={`mailto:${contactInfo.email}`} className="flex items-start hover:text-jelcos-bright transition-colors">
                 <Mail size={18} className="mr-3 mt-1 flex-shrink-0" />
                 <span>{contactInfo.email}</span>
               </a>
@@ -39,35 +40,54 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Location */}
+          {/* Locations */}
           <div>
-            <h4 className="text-lg font-semibold mb-4 text-emerald-400">Location</h4>
-            <div className="flex items-start">
-              <MapPin size={18} className="mr-3 mt-1 flex-shrink-0 text-emerald-400" />
-              <p className="text-gray-400 leading-relaxed">
-                {contactInfo.address}
-              </p>
+            <h4 className="text-lg font-semibold mb-4 text-jelcos-bright">Our Branches</h4>
+            
+            <div className="space-y-4">
+              <div className="flex items-start">
+                <MapPin size={18} className="mr-3 mt-1 flex-shrink-0 text-jelcos-bright" />
+                <div>
+                  <h5 className="text-white font-medium mb-1">Head Office</h5>
+                  <p className="text-gray-400 leading-relaxed text-sm">
+                    {contactInfo.address}
+                  </p>
+                </div>
+              </div>
+              
+              <div className="flex items-start">
+                <MapPin size={18} className="mr-3 mt-1 flex-shrink-0 text-jelcos-bright" />
+                <div>
+                  <h5 className="text-white font-medium mb-1">Branch Office</h5>
+                  <a href={contactInfo.branch2Link} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-jelcos-bright leading-relaxed text-sm transition-colors">
+                    {contactInfo.addressBranch2}
+                  </a>
+                  <p className="text-gray-500 mt-1 text-xs">
+                    {contactInfo.branch2Areas}
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-semibold mb-4 text-emerald-400">Quick Links</h4>
+            <h4 className="text-lg font-semibold mb-4 text-jelcos-bright">Quick Links</h4>
             <ul className="space-y-2">
               <li>
-                <button onClick={() => document.getElementById('services').scrollIntoView({ behavior: 'smooth' })} className="text-gray-400 hover:text-emerald-400 transition-colors">
+                <Link to="/services" className="text-gray-400 hover:text-jelcos-bright transition-colors">
                   Our Services
-                </button>
+                </Link>
               </li>
               <li>
-                <button onClick={() => document.getElementById('scheduler').scrollIntoView({ behavior: 'smooth' })} className="text-gray-400 hover:text-emerald-400 transition-colors">
+                <Link to="/book" className="text-gray-400 hover:text-jelcos-bright transition-colors">
                   Book Appointment
-                </button>
+                </Link>
               </li>
               <li>
-                <button onClick={() => document.getElementById('testimonials').scrollIntoView({ behavior: 'smooth' })} className="text-gray-400 hover:text-emerald-400 transition-colors">
-                  Testimonials
-                </button>
+                <Link to="/" className="text-gray-400 hover:text-jelcos-bright transition-colors">
+                  Home
+                </Link>
               </li>
             </ul>
           </div>

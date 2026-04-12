@@ -70,31 +70,58 @@ export const testimonials = [
     id: 1,
     name: "Gopan Venugopal",
     rating: 5,
-    date: "November 17, 2021",
+    date: "January 14, 2026",
     title: "Stellar and Credible Service",
     content: "After too many searches and having had bitter experiences; I am glad and happy that I found Jelcos Home Nursing Services. Very reliable and authentic. Ms. Bindhu who is the Live in care Giver is very Phenomenal, never have to have anything re-done and nothing is ever forgotten. It should be worth mentioned Mr Prakash makes very swift responses to any queries. It is a big relief to know that my loved one's are taken care of when sitting miles away from them."
   },
   {
     id: 2,
-    name: "Priya Menon",
+    name: "Anjali Nair (NRI, Dubai)",
     rating: 5,
-    date: "March 10, 2022",
-    title: "Excellent Post-Delivery Care",
-    content: "The post-delivery care service was exceptional. The nurse was very caring and knowledgeable, helping me through the most challenging time. Highly recommend their services to new mothers."
+    date: "March 02, 2026",
+    title: "A True Blessing for NRIs",
+    content: "Living in Dubai, finding reliable care for my bedridden mother in Kerala was my biggest worry. Jelcos has been a true blessing. Their nurses are highly professional, punctual, and treat my mother like their own family. The peace of mind they provide to NRIs like us is priceless."
   },
   {
     id: 3,
+    name: "Thomas Abraham",
+    rating: 5,
+    date: "February 18, 2026",
+    title: "Outstanding Staff Behavior and Quality",
+    content: "I am thoroughly impressed with the service quality of Jelcos Home Nursing. The staff's behavior is extremely polite, compassionate, and highly trained. They handled all medical routines perfectly, giving us huge relief during my father's post-surgery recovery."
+  },
+  {
+    id: 4,
+    name: "Sarah Varghese (NRI, UK)",
+    rating: 5,
+    date: "December 28, 2025",
+    title: "Highly Reliable and Trustworthy",
+    content: "As an NRI based in the UK, I was completely stressed about my parents' wellbeing back home. I reached out to Mr. Prakash, and the way Jelcos organized 24/7 care was incredibly reliable. The nurses are so caring and diligent. I highly recommend their services to all expats looking for peace of mind."
+  },
+  {
+    id: 5,
+    name: "Priya Menon",
+    rating: 5,
+    date: "November 05, 2025",
+    title: "Excellent Post-Delivery Care",
+    content: "The post-delivery care service was exceptional. The nurse was very caring, knowledgeable, and helped me tremendously through the most challenging time. Highly recommend their services to new mothers."
+  },
+  {
+    id: 6,
     name: "Rajesh Kumar",
     rating: 5,
-    date: "July 22, 2022",
-    title: "Professional and Caring",
-    content: "We needed elderly care for my father and Jelcos provided an amazing caregiver. Professional, compassionate, and always punctual. Thank you for taking such good care of our loved one."
+    date: "September 12, 2025",
+    title: "Professional and Compassionate",
+    content: "We needed elderly care for my father and Jelcos provided an amazing caregiver. Professional, compassionate, and always punctual. Thank you for taking such good care of our loved one with such high service quality."
   }
 ];
 
 export const contactInfo = {
   phone: "+91 9446978999",
   address: "Jelcos Home Nursing, Ayathil, Kollam - 691021, Near Meditrina Hospital",
+  addressBranch2: "Jelcos Home Nursing, Nadakkal Road, Kalluvathukkal",
+  branch2Link: "https://share.google/H98fiJFnIFFwfC1i2",
+  branch2Areas: "Serving: Parippally, Chathanoor, Paravoor, Varkala, Kallambalam, Attingal, and Kazhakoottam",
   hours: "Monday - Sunday 10:00 - 18:00",
   email: "info@jelcos.com"
 };

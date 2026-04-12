@@ -1,30 +1,28 @@
 import React from "react";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Header from "./components/Header";
-import Hero from "./components/Hero";
-import VideoShowcase from "./components/VideoShowcase";
-import Services from "./components/Services";
-import WhyChooseUs from "./components/WhyChooseUs";
-import Scheduler from "./components/Scheduler";
-import Questionnaire from "./components/Questionnaire";
-import Testimonials from "./components/Testimonials";
 import Footer from "./components/Footer";
 import { Toaster } from "./components/ui/sonner";
 
+import Home from "./pages/Home";
+import ServicesPage from "./pages/ServicesPage";
+import BookingPage from "./pages/BookingPage";
+
 function App() {
   return (
-    <div className="App">
-      <Header />
-      <Hero />
-      <VideoShowcase />
-      <Services />
-      <WhyChooseUs />
-      <Scheduler />
-      <Questionnaire />
-      <Testimonials />
-      <Footer />
-      <Toaster />
-    </div>
+    <Router>
+      <div className="App">
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/book" element={<BookingPage />} />
+        </Routes>
+        <Footer />
+        <Toaster />
+      </div>
+    </Router>
   );
 }
 
