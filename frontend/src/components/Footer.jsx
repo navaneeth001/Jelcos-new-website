@@ -13,8 +13,9 @@ const Footer = () => {
           {/* Brand */}
           <div>
             <div className="flex items-center mb-4">
-              <h3 className="text-2xl font-bold text-jelcos-bright">Jelcos</h3>
-              <Heart className="ml-2 fill-jelcos-bright text-jelcos-bright" size={20} />
+              <Link to="/" className="flex items-center">
+                <img src={require('../assets/logo.png')} alt="Jelcos Logo" className="h-12 w-auto object-contain brightness-0 invert opacity-90" />
+              </Link>
             </div>
             <p className="text-gray-400 leading-relaxed">
               Providing compassionate and professional home nursing services across Kerala.
