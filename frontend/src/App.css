@@ -1,0 +1,59 @@
+/* Custom styles for Jelcos Home Nursing */
+
+* {
+  scroll-behavior: smooth;
+}
+
+.App {
+  min-height: 100vh;
+}
+
+/* Remove default button focus outline and add custom one */
+button:focus-visible {
+  outline: 2px solid #10b981;
+  outline-offset: 2px;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #10b981;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #059669;
+}
+
+/* Smooth transitions for interactive elements */
+button,
+a,
+input,
+textarea,
+select {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+/* Card hover effects */
+.group:hover {
+  transform: translateY(-4px);
+}
+
+/* Input focus animations */
+input:focus,
+textarea:focus,
+select:focus {
+  transform: scale(1.01);
+}
+
+/* Loading animation for buttons */
+button:active {
+  transform: scale(0.98);
+}
