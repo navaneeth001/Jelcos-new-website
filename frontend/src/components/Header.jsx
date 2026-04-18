@@ -27,7 +27,7 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center">
             <Link to="/" className="flex items-center gap-3">
-              <img src={require('../assets/logo.png')} alt="Jelcos Logo" className="h-10 md:h-14 w-auto object-contain origin-left" />
+              <img src={require('../assets/fontStyle.png')} alt="Jelcos Logo" className="h-10 md:h-14 w-auto object-contain origin-left" />
             </Link>
           </div>
 

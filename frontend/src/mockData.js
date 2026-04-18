@@ -160,29 +160,44 @@ export const questionnaireQuestions = [
   },
   {
     id: 2,
-    question: "Patient's age",
-    type: "number"
+    question: "What is your phone number?",
+    type: "tel",
+    placeholder: "Enter 10-digit phone number",
+    pattern: "[0-9]{10}",
+    title: "Please enter a valid 10-digit phone number"
   },
   {
     id: 3,
-    question: "Current medical condition",
-    type: "textarea"
+    question: "Patient's age",
+    type: "number",
+    placeholder: "Enter age",
+    min: 0,
+    max: 120
   },
   {
     id: 4,
+    question: "Current medical condition",
+    type: "textarea",
+    placeholder: "Describe the patient's current medical condition...",
+    optional: true
+  },
+  {
+    id: 5,
     question: "Mobility status",
     type: "select",
     options: ["Fully Mobile", "Partially Mobile", "Bedridden", "Wheelchair"]
   },
   {
-    id: 5,
+    id: 6,
     question: "Care duration required",
     type: "select",
     options: ["Part-time (4-8 hours)", "Full-time (12 hours)", "24/7 Live-in Care"]
   },
   {
-    id: 6,
+    id: 7,
     question: "Special requirements or medications",
-    type: "textarea"
+    type: "textarea",
+    placeholder: "Any special requirements, medications, or allergies...",
+    optional: true
   }
 ];

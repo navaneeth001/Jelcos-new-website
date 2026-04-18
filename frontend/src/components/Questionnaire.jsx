@@ -15,11 +15,62 @@ const API_URL = process.env.NODE_ENV === 'production'
 
 const Questionnaire = () => {
   const [formData, setFormData] = useState({});
+  const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
   const { toast } = useToast();
 
+  const validateField = (questionId, value) => {
+    const question = questionnaireQuestions.find(q => q.id === questionId);
+    if (!question) return "";
+
+    const isEmpty = !value || (typeof value === 'string' && value.trim() === '');
+
+    if (isEmpty) {
+      return question.optional ? "" : "This field is required";
+    }
+
+    if (question.type === 'tel' && question.pattern) {
+      const regex = new RegExp(`^${question.pattern}$`);
+      if (!regex.test(value)) return question.title || "Invalid format";
+    }
+
+    if (question.type === 'number') {
+      const num = Number(value);
+      if (question.min !== undefined && num < question.min) return `Minimum value is ${question.min}`;
+      if (question.max !== undefined && num > question.max) return `Maximum value is ${question.max}`;
+    }
+
+    if (question.type === 'textarea' && question.minLength) {
+      if (value.length < question.minLength) return `Minimum ${question.minLength} characters required`;
+    }
+
+    return "";
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Validate all fields
+    const newErrors = {};
+    let hasErrors = false;
+
+    questionnaireQuestions.forEach(q => {
+      const error = validateField(q.id, formData[q.id]);
+      if (error) {
+        newErrors[q.id] = error;
+        hasErrors = true;
+      }
+    });
+
+    if (hasErrors) {
+      setErrors(newErrors);
+      toast({
+        title: "Validation Error",
+        description: "Please check the highlighted fields.",
+        variant: "destructive"
+      });
+      return;
+    }
     
     try {
       const response = await fetch(`${API_URL}/website-enquiries/questionnaire`, {
@@ -57,6 +108,10 @@ const Questionnaire = () => {
 
   const handleInputChange = (questionId, value) => {
     setFormData(prev => ({ ...prev, [questionId]: value }));
+    // Clear error when user starts typing/selecting
+    if (errors[questionId]) {
+      setErrors(prev => ({ ...prev, [questionId]: "" }));
+    }
   };
 
   if (submitted) {
@@ -104,16 +159,15 @@ const Questionnaire = () => {
               {questionnaireQuestions.map((question) => (
                 <div key={question.id} className="space-y-3">
                   <Label htmlFor={`question-${question.id}`} className="text-base font-medium text-gray-800">
-                    {question.id}. {question.question}
+                    {question.id}. {question.question} {question.optional && <span className="text-gray-400 font-normal text-sm ml-1">(Optional)</span>}
                   </Label>
                   
                   {question.type === 'select' && (
                     <Select 
                       value={formData[question.id] || ''} 
                       onValueChange={(value) => handleInputChange(question.id, value)}
-                      required
                     >
-                      <SelectTrigger className="bg-gray-50 border-2 border-gray-200 focus:border-jelcos-dark rounded-xl py-6">
+                      <SelectTrigger className={`bg-gray-50 border-2 ${errors[question.id] ? 'border-red-500' : 'border-gray-200'} focus:border-jelcos-dark rounded-xl py-6`}>
                         <SelectValue placeholder="Select an option" />
                       </SelectTrigger>
                       <SelectContent>
@@ -130,24 +184,39 @@ const Questionnaire = () => {
                     <Input
                       id={`question-${question.id}`}
                       type="number"
-                      required
                       value={formData[question.id] || ''}
                       onChange={(e) => handleInputChange(question.id, e.target.value)}
-                      placeholder="Enter age"
-                      className="bg-gray-50 border-2 border-gray-200 focus:border-jelcos-dark rounded-xl py-6"
+                      placeholder={question.placeholder || "Enter age"}
+                      className={`bg-gray-50 border-2 ${errors[question.id] ? 'border-red-500' : 'border-gray-200'} focus:border-jelcos-dark rounded-xl py-6`}
+                    />
+                  )}
+
+                  {question.type === 'tel' && (
+                    <Input
+                      id={`question-${question.id}`}
+                      type="tel"
+                      value={formData[question.id] || ''}
+                      onChange={(e) => handleInputChange(question.id, e.target.value)}
+                      placeholder={question.placeholder || "Enter phone number"}
+                      className={`bg-gray-50 border-2 ${errors[question.id] ? 'border-red-500' : 'border-gray-200'} focus:border-jelcos-dark rounded-xl py-6`}
                     />
                   )}
                   
                   {question.type === 'textarea' && (
                     <Textarea
                       id={`question-${question.id}`}
-                      required
                       value={formData[question.id] || ''}
                       onChange={(e) => handleInputChange(question.id, e.target.value)}
-                      placeholder="Please provide details..."
+                      placeholder={question.placeholder || "Please provide details..."}
                       rows={4}
-                      className="bg-gray-50 border-2 border-gray-200 focus:border-jelcos-dark rounded-xl resize-none"
+                      className={`bg-gray-50 border-2 ${errors[question.id] ? 'border-red-500' : 'border-gray-200'} focus:border-jelcos-dark rounded-xl resize-none`}
                     />
+                  )}
+                  
+                  {errors[question.id] && (
+                    <p className="text-red-500 text-sm mt-1 animate-in fade-in slide-in-from-top-1">
+                      {errors[question.id]}
+                    </p>
                   )}
                 </div>
               ))}
