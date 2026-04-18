@@ -46,7 +46,7 @@ export const services = [
   {
     id: 7,
     title: "Medical Tourism Care",
-    description: "Dedicated post-operative care and bystander support for international patients and NRIs visiting Kerala.",
+    description: "Dedicated post-operative care and bystander support for international patients and NRIs visiting Kollam and Kerala.",
     icon: "hospital",
     features: ["Post-Op Recovery", "NRI Support", "Hospital Coordination"]
   }
@@ -56,7 +56,7 @@ export const whyChooseUs = [
   {
     id: 5,
     title: "Comprehensive Home Healthcare",
-    description: "From house help to specialized medical tourism recovery, we are the leading home healthcare provider in Kerala.",
+    description: "From house help to specialized medical tourism recovery, we are the leading home healthcare provider in Kollam and Kerala.",
     icon: "shield-check"
   },
   {

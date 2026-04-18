@@ -43,13 +43,13 @@ const Hero = () => {
           <div className="space-y-8">
             <div className="inline-flex items-center space-x-2 bg-jelcos-bright/20 text-jelcos-darker px-4 py-2 rounded-full text-sm font-medium">
               <Heart size={16} className="fill-jelcos-bright text-jelcos-bright" />
-              <span>Trusted Care in Kerala</span>
+              <span>Trusted Care in Kollam & Kerala</span>
             </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
               We Provide the Best
               <span className="text-jelcos-dark block mt-2 text-3xl md:text-5xl lg:text-6xl">Home Nursing, House Help & Elderly Care</span>
-              In Kerala
+              In Kollam & Kerala
             </h1>
             
             <p className="text-lg text-gray-600 leading-relaxed">

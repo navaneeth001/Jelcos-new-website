@@ -10,7 +10,7 @@ const VideoShowcase = () => {
             See Our <span className="text-jelcos-dark">Care in Action</span>
           </h2>
           <p className="text-lg text-gray-600">
-            Watch how we provide compassionate and professional care to families across Kerala
+            Watch how we provide compassionate and professional care to families across Kollam and Kerala
           </p>
         </div>
 
