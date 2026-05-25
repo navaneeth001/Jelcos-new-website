@@ -23,10 +23,18 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4 text-jelcos-bright">Contact Us</h4>
             <div className="space-y-3">
-              <a href={`tel:${contactInfo.phone}`} className="flex items-start hover:text-jelcos-bright transition-colors">
-                <Phone size={18} className="mr-3 mt-1 flex-shrink-0" />
-                <span>{contactInfo.phone}</span>
-              </a>
+              <div>
+                <a href={`tel:${contactInfo.phone}`} className="flex items-start hover:text-jelcos-bright transition-colors">
+                  <Phone size={18} className="mr-3 mt-1 flex-shrink-0" />
+                  <span>{contactInfo.phone} <span className="text-gray-500 text-xs">(Head Office)</span></span>
+                </a>
+              </div>
+              <div>
+                <a href={`tel:${contactInfo.branchPhone}`} className="flex items-start hover:text-jelcos-bright transition-colors">
+                  <Phone size={18} className="mr-3 mt-1 flex-shrink-0" />
+                  <span>{contactInfo.branchPhone} <span className="text-gray-500 text-xs">(Kalluvathukkal)</span></span>
+                </a>
+              </div>
               <a href={`mailto:${contactInfo.email}`} className="flex items-start hover:text-jelcos-bright transition-colors">
                 <Mail size={18} className="mr-3 mt-1 flex-shrink-0" />
                 <span>{contactInfo.email}</span>

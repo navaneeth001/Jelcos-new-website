@@ -67,11 +67,15 @@ const Header = () => {
             </button>
           </nav>
 
-          {/* Contact Button */}
-          <div className="hidden md:flex items-center space-x-4">
+          {/* Contact Buttons */}
+          <div className="hidden md:flex items-center space-x-3">
             <a href="tel:+919446978999" className="flex items-center space-x-2 bg-jelcos-bright/20 text-jelcos-darker px-4 py-2 rounded-full hover:bg-jelcos-bright/30 transition-all duration-300">
               <Phone size={16} className="text-jelcos-dark" />
               <span className="font-semibold text-sm">+91 9446978999</span>
+            </a>
+            <a href="tel:+918139801294" className="flex items-center space-x-2 bg-jelcos-bright/20 text-jelcos-darker px-4 py-2 rounded-full hover:bg-jelcos-bright/30 transition-all duration-300">
+              <Phone size={16} className="text-jelcos-dark" />
+              <span className="font-semibold text-sm">+91 81398 01294</span>
             </a>
           </div>
 
@@ -108,6 +112,10 @@ const Header = () => {
               <a href="tel:+919446978999" className="flex items-center space-x-2 text-jelcos-dark pt-2">
                 <Phone size={18} />
                 <span className="font-medium">+91 9446978999</span>
+              </a>
+              <a href="tel:+918139801294" className="flex items-center space-x-2 text-jelcos-dark">
+                <Phone size={18} />
+                <span className="font-medium">Kalluvathukkal: +91 81398 01294</span>
               </a>
             </nav>
           </div>

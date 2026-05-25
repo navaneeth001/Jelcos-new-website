@@ -138,6 +138,7 @@ export const testimonials = [
 
 export const contactInfo = {
   phone: "+91 9446978999",
+  branchPhone: "+91 81398 01294",
   address: "Jelcos Home Nursing, Ayathil, Kollam - 691021, Near Meditrina Hospital",
   addressBranch2: "Jelcos Home Nursing, Nadakkal Road, Kalluvathukkal",
   branch2Link: "https://share.google/H98fiJFnIFFwfC1i2",
