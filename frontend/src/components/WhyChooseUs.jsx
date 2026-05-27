@@ -15,10 +15,10 @@ const WhyChooseUs = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Why Choose <span className="text-jelcos-dark">Jelcos?</span>
+            Why Choose <span className="text-jelcos-dark">Jelcos</span> for Home Nursing & Elderly Care in Kollam & Trivandrum?
           </h2>
           <p className="text-lg text-gray-600">
-            We're committed to providing exceptional care with professionalism and compassion
+            We're committed to providing exceptional home healthcare, house help, and medical tourism support with professionalism and compassion across Kerala
           </p>
         </div>
 

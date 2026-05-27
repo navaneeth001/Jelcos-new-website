@@ -43,7 +43,7 @@ const Hero = () => {
           <div className="space-y-8">
             <div className="inline-flex items-center space-x-2 bg-jelcos-bright/20 text-jelcos-darker px-4 py-2 rounded-full text-sm font-medium">
               <Heart size={16} className="fill-jelcos-bright text-jelcos-bright" />
-              <span>Trusted Care in Kollam & Kerala</span>
+              <span>Trusted Home Nursing in Kollam, Trivandrum & Kerala</span>
             </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
@@ -105,9 +105,9 @@ const Hero = () => {
                   >
                     <img
                       src={image}
-                      alt={`Healthcare service ${index + 1}`}
+                      alt={`Jelcos home nursing and elderly care services in Kollam and Trivandrum - Image ${index + 1}`}
                       className="w-full h-full object-cover"
-                      loading="lazy"
+                      loading="eager"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
                   </div>

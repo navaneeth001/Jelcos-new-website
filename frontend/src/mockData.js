@@ -142,7 +142,7 @@ export const contactInfo = {
   address: "Jelcos Home Nursing, Ayathil, Kollam - 691021, Near Meditrina Hospital",
   addressBranch2: "Jelcos Home Nursing, Nadakkal Road, Kalluvathukkal",
   branch2Link: "https://share.google/H98fiJFnIFFwfC1i2",
-  branch2Areas: "Serving: Parippally, Chathanoor, Paravoor, Varkala, Kallambalam, Attingal, and Kazhakoottam",
+  branch2Areas: "Serving: Parippally, Chathanoor, Paravoor, Varkala, Kallambalam, Attingal, Kazhakoottam, and Trivandrum",
   hours: "Monday - Sunday 10:00 - 18:00",
   email: "info@jelcos.com"
 };

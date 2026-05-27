@@ -28,10 +28,10 @@ const Home = () => {
                 <FileText className="text-jelcos-dark" size={32} />
               </div>
               <h3 className="text-2xl font-bold text-gray-900 group-hover:text-jelcos-dark transition-colors mb-3">
-                View Full Instruction Manual
+                View Full Instruction Manual for Home Nursing & Care Services
               </h3>
               <p className="text-gray-600 mb-6 max-w-md mx-auto">
-                Complete guide with detailed instructions for availing our services
+                Complete guide with detailed instructions for availing our home nursing, elderly care, house help, and medical tourism services in Kollam, Trivandrum & Kerala
               </p>
               <div className="inline-flex items-center space-x-2 bg-jelcos-dark hover:bg-jelcos-darker text-white px-8 py-4 rounded-xl font-medium shadow-lg hover:shadow-xl transition-all">
                 <span>View Manual</span>

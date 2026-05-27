@@ -18,10 +18,10 @@ const Services = () => {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Our <span className="text-jelcos-dark">Care Services</span>
+            Our <span className="text-jelcos-dark">Care Services</span> in Kollam, Trivandrum & Kerala
           </h2>
           <p className="text-lg text-gray-600">
-            Comprehensive healthcare services tailored to meet your family's unique needs
+            Comprehensive home nursing, elderly care, house help, and medical tourism support services tailored to meet your family's unique needs
           </p>
         </div>
 
