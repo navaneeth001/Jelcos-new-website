@@ -4,8 +4,9 @@ import { Star, Quote } from 'lucide-react';
 import { Card, CardContent } from './ui/card';
 import { testimonials } from '../mockData';
 
-const Testimonials = () => {
+const Testimonials = ({ limit }) => {
   const navigate = useNavigate();
+  const displayedTestimonials = limit ? testimonials.slice(0, limit) : testimonials;
 
   return (
     <section id="testimonials" className="py-20 bg-white">
@@ -20,7 +21,7 @@ const Testimonials = () => {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {testimonials.map((testimonial) => (
+          {displayedTestimonials.map((testimonial) => (
             <Card 
               key={testimonial.id} 
               className="border-2 border-gray-100 hover:border-jelcos-bright/30 hover:shadow-xl transition-all duration-300 relative overflow-hidden"
@@ -67,13 +68,22 @@ const Testimonials = () => {
 
         {/* CTA */}
         <div className="text-center mt-12">
-          <p className="text-gray-600 mb-6">Join hundreds of satisfied families</p>
-          <button 
-            onClick={() => navigate('/book')}
-            className="bg-jelcos-dark hover:bg-jelcos-darker text-white px-8 py-4 rounded-xl font-medium shadow-lg hover:shadow-xl transition-all"
-          >
-            Book Your Service Today
-          </button>
+          {limit && (
+            <button 
+              onClick={() => navigate('/testimonials')}
+              className="bg-jelcos-dark hover:bg-jelcos-darker text-white px-8 py-4 rounded-xl font-medium shadow-lg hover:shadow-xl transition-all"
+            >
+              View All Testimonials
+            </button>
+          )}
+          {!limit && (
+            <button 
+              onClick={() => navigate('/book')}
+              className="bg-jelcos-dark hover:bg-jelcos-darker text-white px-8 py-4 rounded-xl font-medium shadow-lg hover:shadow-xl transition-all"
+            >
+              Book Your Service Today
+            </button>
+          )}
         </div>
       </div>
     </section>

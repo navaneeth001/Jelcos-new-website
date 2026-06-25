@@ -51,14 +51,12 @@ const Header = () => {
             >
               Book Now
             </Link>
-            {location.pathname === '/' && (
-              <button 
-                onClick={() => scrollToSection('testimonials')} 
-                className="px-4 py-2 rounded-full text-sm font-medium text-gray-600 hover:text-jelcos-dark hover:bg-gray-100/50 transition-all duration-300"
-              >
-                Testimonials
-              </button>
-            )}
+            <Link 
+              to="/testimonials" 
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${location.pathname === '/testimonials' ? 'bg-white text-jelcos-dark shadow-sm' : 'text-gray-600 hover:text-jelcos-dark hover:bg-gray-100/50'}`}
+            >
+              Testimonials
+            </Link>
             <button 
               onClick={() => scrollToSection('contact')} 
               className="px-4 py-2 rounded-full text-sm font-medium text-gray-600 hover:text-jelcos-dark hover:bg-gray-100/50 transition-all duration-300"
@@ -101,11 +99,9 @@ const Header = () => {
               <Link to="/book" onClick={() => setMobileMenuOpen(false)} className="text-gray-700 hover:text-jelcos-dark transition-colors text-left">
                 Book Now
               </Link>
-              {location.pathname === '/' && (
-                <button onClick={() => scrollToSection('testimonials')} className="text-gray-700 hover:text-jelcos-dark transition-colors text-left">
-                  Testimonials
-                </button>
-              )}
+              <Link to="/testimonials" onClick={() => setMobileMenuOpen(false)} className="text-gray-700 hover:text-jelcos-dark transition-colors text-left">
+                Testimonials
+              </Link>
               <button onClick={() => scrollToSection('contact')} className="text-gray-700 hover:text-jelcos-dark transition-colors text-left">
                 Contact
               </button>

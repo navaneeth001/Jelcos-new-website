@@ -2,7 +2,6 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FileText, ExternalLink } from 'lucide-react';
 import Hero from '../components/Hero';
-import VideoShowcase from '../components/VideoShowcase';
 import WhyChooseUs from '../components/WhyChooseUs';
 import Testimonials from '../components/Testimonials';
 
@@ -12,19 +11,16 @@ const Home = () => {
   return (
     <main>
       <Hero />
-      <VideoShowcase />
-      <WhyChooseUs />
-      <Testimonials />
 
       {/* YouTube Shorts Section */}
       <section className="py-20 bg-gradient-to-br from-orange-50 via-white to-jelcos-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Quick <span className="text-jelcos-dark">Overview</span>
+              See Our <span className="text-jelcos-dark">Care in Action</span>
             </h2>
             <p className="text-lg text-gray-600">
-              Watch a short video to learn more about our services
+              Watch how we provide compassionate and professional care to families across Kollam and Kerala
             </p>
           </div>
 
@@ -44,6 +40,9 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      <WhyChooseUs />
+      <Testimonials limit={3} />
 
       {/* Instruction Manual CTA */}
       <section className="py-20 bg-gradient-to-br from-jelcos-light via-white to-orange-50">
