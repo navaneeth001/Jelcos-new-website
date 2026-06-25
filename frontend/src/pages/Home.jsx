@@ -16,6 +16,35 @@ const Home = () => {
       <WhyChooseUs />
       <Testimonials />
 
+      {/* YouTube Shorts Section */}
+      <section className="py-20 bg-gradient-to-br from-orange-50 via-white to-jelcos-light">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Quick <span className="text-jelcos-dark">Overview</span>
+            </h2>
+            <p className="text-lg text-gray-600">
+              Watch a short video to learn more about our services
+            </p>
+          </div>
+
+          <div className="max-w-sm mx-auto">
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-gray-900">
+              <div className="aspect-[9/16]">
+                <iframe
+                  src="https://www.youtube.com/embed/nr80ZnSZobs"
+                  title="Jelcos Home Nursing Services - Short Overview"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full"
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Instruction Manual CTA */}
       <section className="py-20 bg-gradient-to-br from-jelcos-light via-white to-orange-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
