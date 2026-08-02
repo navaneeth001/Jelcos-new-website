@@ -136,7 +136,7 @@ const CleaningServicesPage = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Button
-                onClick={() => navigate("/book")}
+                onClick={() => navigate("/book", { state: { cleaningPlan: "General Cleaning" } })}
                 className="bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-6 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all"
               >
                 Book Cleaning Service
@@ -226,7 +226,7 @@ const CleaningServicesPage = () => {
                     </ul>
                   </div>
                   <Button
-                    onClick={() => navigate("/book")}
+                    onClick={() => navigate("/book", { state: { cleaningPlan: sub.title } })}
                     className="w-full bg-emerald-50 hover:bg-emerald-100 text-emerald-700 border border-emerald-200/50 hover:border-emerald-300 shadow-none font-semibold rounded-xl py-5"
                   >
                     Select Plan
@@ -311,7 +311,7 @@ const CleaningServicesPage = () => {
               Call +91 9446978999
             </a>
             <Button
-              onClick={() => navigate("/book")}
+              onClick={() => navigate("/book", { state: { cleaningPlan: "Unoccupied Home Care & Cleaning" } })}
               className="bg-emerald-600 hover:bg-emerald-700 text-white font-bold border border-emerald-500/30 px-8 py-6 rounded-xl transition-all"
             >
               Schedule Online Inspection

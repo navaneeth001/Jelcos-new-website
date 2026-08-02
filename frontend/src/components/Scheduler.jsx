@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { Calendar, Clock, User, Phone, Mail } from 'lucide-react';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
@@ -15,14 +16,18 @@ const API_URL = process.env.NODE_ENV === 'production'
   : 'http://localhost:3000';
 
 const Scheduler = () => {
+  const location = useLocation();
+  const cleaningPlan = location.state?.cleaningPlan;
+
   const [date, setDate] = useState();
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
     email: '',
-    service: '',
+    service: cleaningPlan ? "Professional Cleaning Services" : '',
     timeSlot: ''
   });
+  const [selectedCleaningPlan, setSelectedCleaningPlan] = useState(cleaningPlan || '');
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
   const { toast } = useToast();
@@ -56,7 +61,8 @@ const Scheduler = () => {
     
     const booking = {
       ...formData,
-      date: date ? format(date, 'PPP') : ''
+      date: date ? format(date, 'PPP') : '',
+      ...(selectedCleaningPlan ? { cleaningPlan: selectedCleaningPlan, tag: "Cleaning service" } : {})
     };
     
     try {
@@ -133,6 +139,14 @@ const Scheduler = () => {
         </div>
 
         <div className="bg-gradient-to-br from-jelcos-light to-orange-50 rounded-3xl p-8 md:p-12 shadow-xl">
+          {selectedCleaningPlan && (
+            <div className="mb-6 p-4 bg-emerald-50 border-2 border-emerald-200 rounded-xl">
+              <p className="text-emerald-800 font-semibold flex items-center">
+                <span className="w-2 h-2 bg-emerald-500 rounded-full mr-2 inline-block"></span>
+                Selected Cleaning Plan: <span className="ml-1 font-bold">{selectedCleaningPlan}</span>
+              </p>
+            </div>
+          )}
           <form onSubmit={handleSubmit} className="space-y-6">
             {/* Name */}
             <div className="space-y-2">
