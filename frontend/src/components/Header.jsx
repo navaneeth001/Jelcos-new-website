@@ -5,6 +5,7 @@ import { Button } from './ui/button';
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [moreServicesOpen, setMoreServicesOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -57,6 +58,35 @@ const Header = () => {
             >
               Testimonials
             </Link>
+            
+            {/* More Services Dropdown */}
+            <div 
+              className="relative"
+              onMouseEnter={() => setMoreServicesOpen(true)}
+              onMouseLeave={() => setMoreServicesOpen(false)}
+            >
+              <button 
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 flex items-center gap-1 ${location.pathname.startsWith('/services/') ? 'bg-white text-jelcos-dark shadow-sm' : 'text-gray-600 hover:text-jelcos-dark hover:bg-gray-100/50'}`}
+              >
+                More Services
+                <svg className={`h-3 w-3 transition-transform duration-200 ${moreServicesOpen ? 'rotate-180' : ''}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              {moreServicesOpen && (
+                <div className="absolute left-0 mt-1 w-52 rounded-2xl bg-white border border-gray-100 shadow-xl py-2 z-50 animate-in fade-in slide-in-from-top-2 duration-200">
+                  <Link 
+                    to="/services/cleaning" 
+                    onClick={() => setMoreServicesOpen(false)}
+                    className="flex items-center gap-2 px-3 py-2.5 text-sm text-gray-700 hover:bg-emerald-50 hover:text-emerald-700 rounded-xl mx-2 font-medium transition-colors"
+                  >
+                    <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
+                    Cleaning Services
+                  </Link>
+                </div>
+              )}
+            </div>
+
             <button 
               onClick={() => scrollToSection('contact')} 
               className="px-4 py-2 rounded-full text-sm font-medium text-gray-600 hover:text-jelcos-dark hover:bg-gray-100/50 transition-all duration-300"
@@ -95,6 +125,10 @@ const Header = () => {
               </Link>
               <Link to="/services" onClick={() => setMobileMenuOpen(false)} className="text-gray-700 hover:text-jelcos-dark transition-colors text-left">
                 Services
+              </Link>
+              <Link to="/services/cleaning" onClick={() => setMobileMenuOpen(false)} className="text-gray-600 hover:text-emerald-600 transition-colors text-left pl-4 flex items-center gap-2">
+                <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full"></span>
+                Cleaning Services
               </Link>
               <Link to="/book" onClick={() => setMobileMenuOpen(false)} className="text-gray-700 hover:text-jelcos-dark transition-colors text-left">
                 Book Now
