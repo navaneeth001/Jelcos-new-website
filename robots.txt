@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.jelcos.com/sitemap.xml
+
+# Allow all crawlers full access - site is pre-rendered for optimal crawling
