@@ -24,35 +24,35 @@ const CleaningServicesPage = () => {
     {
       id: "households",
       title: "Household Cleaning Staff",
-      description: "Dedicated, vetted, and polite cleaning professionals for daily or deep household maintenance, customized entirely around your family's routine.",
+      description: "Dedicated, vetted, and polite cleaning professionals for daily or regular household chores, routine upkeep, and maintenance, customized entirely around your family's needs.",
       icon: HomeIcon,
       bgColor: "from-blue-500/10 to-indigo-500/10",
       iconColor: "text-blue-600",
       features: [
         "Dusting, sweeping, mops, and trash disposal",
         "Kitchen counter, stove, and sink sanitation",
-        "Complete bathroom deep cleaning & scrubbing",
+        "Careful bathroom sanitation & standard scrubbing",
         "Polite, punctual, and background-verified staff"
       ]
     },
     {
       id: "routine",
-      title: "Monthly Routine Deep Cleaning",
-      description: "Comprehensive recurring cleaning visits to keep your home in pristine condition without needing a permanent live-in domestic worker.",
+      title: "Monthly Routine Cleaning Support",
+      description: "Reliable, trust-based recurring cleaning support visits to keep your home in pristine condition, managed by responsible staff who value care and safety.",
       icon: CalendarRange,
       bgColor: "from-emerald-500/10 to-teal-500/10",
       iconColor: "text-emerald-600",
       features: [
-        "Hard-to-reach areas and heavy dust removal",
-        "Scrubbing tiles, tiles grouting, and mirrors",
-        "Cleaning ceiling fans, fixtures, and window panes",
+        "Routine mopping, dusting, and general home upkeep",
+        "Scrubbing bathroom tiles, sinks, and vanity areas",
+        "Dusting ceiling fans, home fixtures, and window panes",
         "Flexible monthly, bi-weekly, or custom intervals"
       ]
     },
     {
       id: "unoccupied",
       title: "Unoccupied Home Care & Cleaning",
-      description: "Specialized care and cleaning for vacant/locked properties. Perfect for NRIs who want to protect their investment from dust, mold, and pest infestations.",
+      description: "A high-trust caretakers' service for locked properties in Kerala. Our responsible staff regularly check, sweep, and mop to prevent dust and mold.",
       icon: LockKeyhole,
       bgColor: "from-amber-500/10 to-orange-500/10",
       iconColor: "text-amber-600",
@@ -72,8 +72,8 @@ const CleaningServicesPage = () => {
       icon: UserCheck
     },
     {
-      title: "Eco-Friendly Products",
-      description: "We use safe, high-grade, eco-friendly cleaning agents that are safe for children, seniors, and household pets.",
+      title: "Highly Courteous & Polite",
+      description: "Our cleaning staff are trained in domestic hospitality, respecting your privacy and executing work with quiet diligence.",
       icon: ThumbsUp
     },
     {
@@ -132,7 +132,7 @@ const CleaningServicesPage = () => {
               for Kerala Households
             </h1>
             <p className="text-lg md:text-xl text-gray-600 leading-relaxed max-w-2xl">
-              Professional, vetted cleaning staff for daily household chores, scheduled routine monthly deep cleaning, and specialized caretaker services for unoccupied NRI homes across Kollam and Kerala.
+              Rather than mechanical commercial deep cleaning, we provide verified, polite, and caring human staff specialized in regular household upkeep, routine home care, and unoccupied caretaker support in Kollam and Kerala.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <Button
@@ -164,12 +164,12 @@ const CleaningServicesPage = () => {
                   <Brush className="text-emerald-600" size={24} />
                 </div>
                 <div>
-                  <h3 className="font-bold text-gray-900 text-lg">Clean Home Guarantee</h3>
-                  <p className="text-emerald-600 text-sm font-medium">Safe, Trustworthy & Spotless</p>
+                  <h3 className="font-bold text-gray-900 text-lg">High-Trust Guarantee</h3>
+                  <p className="text-emerald-600 text-sm font-medium">Responsible, Verified & Polite</p>
                 </div>
               </div>
               <p className="text-gray-600 mb-6 leading-relaxed">
-                Whether you need a daily hand for chores, a deep clean before an event, or a protective companion for your locked property, Jelcos delivers uncompromising standards.
+                We do not use commercial heavy machinery or industrial chemicals. Instead, we capitalize on a dedicated team of responsible household staff who care for your home with genuine trust and accountability.
               </p>
               <div className="space-y-3.5">
                 <div className="flex items-start">
@@ -178,7 +178,7 @@ const CleaningServicesPage = () => {
                 </div>
                 <div className="flex items-start">
                   <CheckCircle2 className="text-emerald-500 mr-2.5 mt-0.5 flex-shrink-0" size={18} />
-                  <span className="text-sm text-gray-700 font-medium">Eco-friendly sanitizers & fresh equipment</span>
+                  <span className="text-sm text-gray-700 font-medium">Quiet, diligent, and respectful home care</span>
                 </div>
                 <div className="flex items-start">
                   <CheckCircle2 className="text-emerald-500 mr-2.5 mt-0.5 flex-shrink-0" size={18} />
@@ -195,10 +195,10 @@ const CleaningServicesPage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Our Specialized <span className="text-emerald-600">Cleaning Packages</span>
+              Our Trust-Based <span className="text-emerald-600">Cleaning Offerings</span>
             </h2>
             <p className="text-lg text-gray-600">
-              Tailored specifically to address unique household cleaning needs in Kerala, focusing on hygiene, scheduling, and vacant home safety.
+              Meticulously tailored to support the growing trend in Kerala of households seeking highly reliable, trained individuals for regular home upkeep and vacant property care.
             </p>
           </div>
 
@@ -245,7 +245,7 @@ const CleaningServicesPage = () => {
             Why Choose <span className="text-emerald-600">Jelcos Cleaning</span>?
           </h2>
           <p className="text-lg text-gray-600">
-            Building on our legacy of compassionate care and trustworthy household assistance, we bring security and perfection to professional cleaning.
+            Building on our decade-long legacy of high-trust home nursing and elderly care, we address the biggest challenge in home upkeep: reliability and respect.
           </p>
         </div>
 
@@ -298,9 +298,9 @@ const CleaningServicesPage = () => {
       {/* NRI Promo Banner CTA */}
       <div className="bg-gradient-to-r from-emerald-800 to-teal-900 text-white py-16">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
-          <h2 className="text-3xl md:text-4xl font-bold">Living Abroad? Let Us Look After Your Home in Kerala.</h2>
+          <h2 className="text-3xl md:text-4xl font-bold">Living Abroad? Let Us Look After Your Home in Kerala with Absolute Trust.</h2>
           <p className="text-emerald-100 max-w-2xl mx-auto leading-relaxed">
-            Protect your unoccupied home from the harsh tropical climate, moisture damage, and structural degradation. Our reliable team performs regular airing, deep cleaning, leakage checks, and garden maintenance, keeping you fully informed with detailed digital video updates.
+            Avoid letting dust, mildew, or untrusted caretakers affect your valuable property. Our highly responsible staff perform scheduled check-ins, routine sweeping, airing out, and garden maintenance—bringing peace of mind straight to your phone.
           </p>
           <div className="pt-4 flex flex-col sm:flex-row justify-center gap-4">
             <a
