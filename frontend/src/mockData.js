@@ -49,6 +49,13 @@ export const services = [
     description: "Dedicated post-operative care and bystander support for international patients and NRIs visiting Kollam and Kerala.",
     icon: "hospital",
     features: ["Post-Op Recovery", "NRI Support", "Hospital Coordination"]
+  },
+  {
+    id: 8,
+    title: "Professional Cleaning Services",
+    description: "Reliable household cleaning staff, regular monthly deep cleaning, and specialized caretaker services for unoccupied homes.",
+    icon: "brush",
+    features: ["Household Staff", "Monthly Deep Clean", "Unoccupied Home Care"]
   }
 ];
 
@@ -157,7 +164,7 @@ export const questionnaireQuestions = [
     id: 1,
     question: "What type of care service do you need?",
     type: "select",
-    options: ["Home Nursing", "House Help", "Elderly Care", "Medical Tourism Care", "Hospital Bystander", "Child Care", "Post Delivery Care"]
+    options: ["Home Nursing", "House Help", "Elderly Care", "Medical Tourism Care", "Hospital Bystander", "Child Care", "Post Delivery Care", "Cleaning Services"]
   },
   {
     id: 2,

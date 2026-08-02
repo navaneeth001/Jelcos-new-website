@@ -81,8 +81,10 @@
     "include": [
       "/",
       "/services",
+      "/services/cleaning",
       "/book",
-      "/instructions"
+      "/instructions",
+      "/testimonials"
     ],
     "puppeteerArgs": [
       "--no-sandbox",

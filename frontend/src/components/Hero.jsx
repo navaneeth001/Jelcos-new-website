@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { ArrowRight, Heart, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowRight, Heart, ChevronLeft, ChevronRight, Sparkles } from 'lucide-react';
 import { Button } from './ui/button';
 
 import img1 from '../assets/pic1.png';
@@ -41,9 +41,21 @@ const Hero = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-8">
-            <div className="inline-flex items-center space-x-2 bg-jelcos-bright/20 text-jelcos-darker px-4 py-2 rounded-full text-sm font-medium">
-              <Heart size={16} className="fill-jelcos-bright text-jelcos-bright" />
-              <span>Trusted Home Nursing in Kollam, Trivandrum & Kerala</span>
+            <div className="flex flex-col gap-3">
+              <div className="inline-flex items-center space-x-2 bg-jelcos-bright/20 text-jelcos-darker px-4 py-2 rounded-full text-sm font-medium w-fit">
+                <Heart size={16} className="fill-jelcos-bright text-jelcos-bright" />
+                <span>Trusted Home Nursing in Kollam, Trivandrum & Kerala</span>
+              </div>
+              
+              <div 
+                onClick={() => navigate('/services/cleaning')}
+                className="inline-flex items-center space-x-2 bg-emerald-50 text-emerald-800 border border-emerald-200 hover:bg-emerald-100 hover:scale-[1.02] transition-all duration-300 px-4 py-2 rounded-full text-sm font-semibold cursor-pointer shadow-sm w-fit animate-pulse"
+              >
+                <span className="bg-emerald-500 text-white text-[10px] uppercase font-bold px-2 py-0.5 rounded-full mr-1 flex items-center gap-0.5">
+                  <Sparkles size={10} className="fill-white" /> NEW
+                </span>
+                <span>Professional House & Vacant Home Cleaning Services! Learn More →</span>
+              </div>
             </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
