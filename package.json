@@ -1,0 +1,12 @@
+{
+  "name": "jelcos-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Jelcos website - static site. Run locally with: npm start",
+  "scripts": {
+    "start": "serve ."
+  },
+  "devDependencies": {
+    "serve": "^14.2.1"
+  }
+}
