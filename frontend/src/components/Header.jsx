@@ -2,7 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Phone, Menu, X, LogIn } from 'lucide-react';
 
-const WEB_APP_URL = 'https://jelcosapp.web.app/';
+// "Sign in" goes straight to the login screen. The app is members-only, so we
+// deep-link directly to /login instead of the app root (which would otherwise
+// land on the home page before redirecting).
+const WEB_APP_LOGIN_URL = 'https://jelcosapp.web.app/login';
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -70,7 +73,7 @@ const Header = () => {
               +91 94469 78999
             </a>
             <a
-              href={WEB_APP_URL}
+              href={WEB_APP_LOGIN_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-1.5 text-teal-700 text-sm font-bold px-4 py-2.5 rounded-lg border border-teal-200 hover:bg-teal-50 transition-all"
@@ -103,7 +106,7 @@ const Header = () => {
               <Link to="/services" onClick={() => setMobileMenuOpen(false)} className="px-4 py-3 rounded-lg font-semibold text-ink hover:bg-slate-50">Services</Link>
               <Link to="/book" onClick={() => setMobileMenuOpen(false)} className="px-4 py-3 rounded-lg font-semibold text-white bg-teal-600">Book Appointment</Link>
               <a
-                href={WEB_APP_URL}
+                href={WEB_APP_LOGIN_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setMobileMenuOpen(false)}
