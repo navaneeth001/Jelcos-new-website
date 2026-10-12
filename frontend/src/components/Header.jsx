@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Phone, Menu, X } from 'lucide-react';
+import { Phone, Menu, X, LogIn } from 'lucide-react';
+
+const WEB_APP_URL = 'https://jelcosapp.web.app/';
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -67,6 +69,15 @@ const Header = () => {
               <Phone size={16} />
               +91 94469 78999
             </a>
+            <a
+              href={WEB_APP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 text-teal-700 text-sm font-bold px-4 py-2.5 rounded-lg border border-teal-200 hover:bg-teal-50 transition-all"
+            >
+              <LogIn size={16} />
+              Sign in
+            </a>
             <Link
               to="/book"
               className="bg-teal-600 hover:bg-teal-700 text-white text-sm font-bold px-5 py-2.5 rounded-lg shadow-md transition-all"
@@ -91,6 +102,15 @@ const Header = () => {
               <Link to="/about" onClick={() => setMobileMenuOpen(false)} className="px-4 py-3 rounded-lg font-semibold text-ink hover:bg-slate-50">About Us</Link>
               <Link to="/services" onClick={() => setMobileMenuOpen(false)} className="px-4 py-3 rounded-lg font-semibold text-ink hover:bg-slate-50">Services</Link>
               <Link to="/book" onClick={() => setMobileMenuOpen(false)} className="px-4 py-3 rounded-lg font-semibold text-white bg-teal-600">Book Appointment</Link>
+              <a
+                href={WEB_APP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMobileMenuOpen(false)}
+                className="flex items-center justify-center gap-2 bg-teal-50 text-teal-700 px-4 py-3 rounded-lg font-bold"
+              >
+                <LogIn size={16} /> Sign in
+              </a>
               <button onClick={() => scrollToSection('contact')} className="px-4 py-3 rounded-lg font-semibold text-ink hover:bg-slate-50 text-left">Contact</button>
               <a href="tel:+919446978999" className="flex items-center justify-center gap-2 bg-teal-50 text-teal-700 px-4 py-3 rounded-lg font-bold">
                 <Phone size={16} /> +91 94469 78999
