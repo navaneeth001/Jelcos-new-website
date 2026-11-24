@@ -62,6 +62,7 @@ const Header = () => {
             <Link to="/about" className={linkCls(location.pathname === '/about')}>About Us</Link>
             <Link to="/services" className={linkCls(location.pathname.startsWith('/services'))}>Services</Link>
             <Link to="/book" className={linkCls(location.pathname === '/book')}>Book Appointment</Link>
+            <Link to="/app" className={linkCls(location.pathname === '/app')}>App</Link>
             <button onClick={() => scrollToSection('contact')} className="px-4 py-2 rounded-lg text-sm font-semibold text-ink-soft hover:text-teal-700 hover:bg-teal-50 transition-all">
               Contact
             </button>
@@ -105,6 +106,8 @@ const Header = () => {
               <Link to="/about" onClick={() => setMobileMenuOpen(false)} className="px-4 py-3 rounded-lg font-semibold text-ink hover:bg-slate-50">About Us</Link>
               <Link to="/services" onClick={() => setMobileMenuOpen(false)} className="px-4 py-3 rounded-lg font-semibold text-ink hover:bg-slate-50">Services</Link>
               <Link to="/book" onClick={() => setMobileMenuOpen(false)} className="px-4 py-3 rounded-lg font-semibold text-white bg-teal-600">Book Appointment</Link>
+              <Link to="/app" onClick={() => setMobileMenuOpen(false)} className="px-4 py-3 rounded-lg font-semibold text-ink hover:bg-slate-50">App</Link>
+              <button onClick={() => scrollToSection('contact')} className="px-4 py-3 rounded-lg font-semibold text-ink hover:bg-slate-50 text-left">Contact</button>
               <a
                 href={WEB_APP_LOGIN_URL}
                 target="_blank"
@@ -114,7 +117,6 @@ const Header = () => {
               >
                 <LogIn size={16} /> Sign in
               </a>
-              <button onClick={() => scrollToSection('contact')} className="px-4 py-3 rounded-lg font-semibold text-ink hover:bg-slate-50 text-left">Contact</button>
               <a href="tel:+919446978999" className="flex items-center justify-center gap-2 bg-teal-50 text-teal-700 px-4 py-3 rounded-lg font-bold">
                 <Phone size={16} /> +91 94469 78999
               </a>

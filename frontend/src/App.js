@@ -12,6 +12,7 @@ import ServicesPage from "./pages/ServicesPage";
 import ServiceDetailPage from "./pages/ServiceDetailPage";
 import BookingPage from "./pages/BookingPage";
 import InstructionManualPage from "./pages/InstructionManualPage";
+import JelcosApp from "./pages/JelcosApp";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="/services/:slug" element={<ServiceDetailPage />} />
           <Route path="/book" element={<BookingPage />} />
           <Route path="/instructions" element={<InstructionManualPage />} />
+          <Route path="/app" element={<JelcosApp />} />
         </Routes>
         <Footer />
         <WhatsAppFloat />

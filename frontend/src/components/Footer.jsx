@@ -12,7 +12,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
           <div>
-            <img src={logo} alt="Jelcos" className="h-9 w-auto brightness-0 invert mb-4" />
+            <img src={logo} alt="Jelcos" className="h-9 w-auto mb-4" />
             <p className="text-slate-300 leading-relaxed text-[15px]">
               Home nursing, house help &amp; elderly care across Kollam and Kerala.
             </p>

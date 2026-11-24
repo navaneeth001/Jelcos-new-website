@@ -14,6 +14,37 @@ const Home = () => {
   return (
     <main className="bg-white">
       <Hero />
+
+      <section className="py-16 bg-teal-50 border-t border-teal-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Reveal className="max-w-3xl mx-auto text-center">
+            <p className="text-xs font-bold tracking-[0.18em] uppercase text-teal-600 mb-3">
+              Explore our app
+            </p>
+            <h2 className="font-display text-2xl md:text-3xl font-extrabold text-ink mt-2">
+              Download the Jelcos App
+            </h2>
+            <p className="text-ink-soft text-[15px] mt-3 max-w-xl mx-auto">
+              Book vetted caregivers, track visits, and chat with your coordinator
+              — all from one private, secure place.
+            </p>
+            <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="/app"
+                className="group inline-flex items-center gap-2 rounded-xl bg-slate-900 px-7 py-4 text-white font-bold shadow-lg hover:bg-slate-800 hover:-translate-y-1 transition-all"
+              >
+                <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-teal-600 shadow-sm">
+                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                  </svg>
+                </span>
+                Explore our App
+              </a>
+            </div>
+          </Reveal>
+        </div>
+      </section>
       <section className="py-12 bg-white border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal className="max-w-3xl mx-auto text-center">

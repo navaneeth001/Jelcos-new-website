@@ -90,7 +90,8 @@
       "/services/house-help",
       "/services/medical-tourism",
       "/book",
-      "/instructions"
+      "/instructions",
+      "/app"
     ]
   },
   "devDependencies": {
