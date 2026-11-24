@@ -12,11 +12,11 @@ const JelcosApp = () => {
   useEffect(() => {
     const url = "https://www.jelcos.com/app";
     const title =
-      "Jelcos App — Home Nursing, Elderly Care & House Help in Kerala";
+      "Jelcos App — Home Nursing, Elderly Care & Home Help in Kerala for NRIs & Malayalam Families Abroad";
     const description =
-      "Download the Jelcos app to book vetted nurses, house maids, and hospital bystanders across Kerala. Track visits, chat with your coordinator, and manage care from your phone — private, discreet, and arranged across Kerala since 2017. Available on Google Play and the App Store.";
+      "Download the Jelcos app to book vetted nurses, house maids, hospital bystanders, and child caregivers across Kerala — Kollam, Kochi, Thiruvananthapuram, Kozhikode, Thrissur and more. Built for NRIs and Malayalam families in the Gulf (UAE, Saudi Arabia, Qatar, Oman, Kuwait), UK, USA, Canada and Australia. Track visits, chat with your coordinator, and manage home healthcare from your phone. Private, discreet, arranged across Kerala since 2017. Available on Google Play and the App Store.";
     const keywords =
-      "jelcos app, home nursing app kerala, elderly care app, house help app, hospital bystander app, book nurse online kollam, home healthcare app";
+      "jelcos app, home nursing app kerala, home help app kerala, elderly care app kerala, hospital bystander app kerala, child care app kerala, post delivery care app kerala, home healthcare app kerala, nri home care app, malayalam home nursing app, book nurse kerala from abroad, home nursing for nris, kerala home care app uae, kerala home care app saudi arabia, kerala home care app qatar, kerala home care app oman, kerala home care app kuwait, kerala home care app uk, kerala home care app usa, kerala home care app canada, kerala home care app australia, malayalam caregiver app, home help kerala, elder care kerala, medical tourism kerala app, kollam home nursing, kochi home care, thiruvananthapuram home nurse";
 
     document.title = title;
 
@@ -42,6 +42,10 @@ const JelcosApp = () => {
 
     setMeta("description", description);
     setMeta("keywords", keywords);
+    setMeta("geo.placename", "Kerala, India");
+    setMeta("geo.position", "8.8932;76.6141");
+    setMeta("ICBM", "8.8932, 76.6141");
+    setMeta("content-language", "en-IN");
 
     // Canonical URL
     let canon = document.querySelector('link[rel="canonical"]');
@@ -59,6 +63,8 @@ const JelcosApp = () => {
     setProperty("og:description", description);
     setProperty("og:image", "https://www.jelcos.com/logo.png");
     setProperty("og:site_name", "Jelcos");
+    setProperty("og:locale", "en_IN");
+    setProperty("og:locale:alternate", "ml_IN");
 
     // Twitter Card
     setProperty("twitter:card", "summary_large_image");
@@ -76,16 +82,17 @@ const JelcosApp = () => {
     }
     appBanner.setAttribute("content", "app-id=6793068274");
 
-    // JSON-LD SoftwareApplication schema (helps app visibility in search)
+    // JSON-LD SoftwareApplication schema (helps app visibility in search for Kerala + NRI queries)
     if (!document.querySelector('script[type="application/ld+json"][data-jelcos-app]')) {
       const schema = {
         "@context": "https://schema.org",
         "@type": "SoftwareApplication",
         "name": "Jelcos App",
         "applicationCategory": "MedicalApplication",
+        "applicationSubCategory": "Home Healthcare",
         "operatingSystem": "Android, iOS",
-        "applicationSuite": "Home healthcare",
         "description": description,
+        "keywords": keywords,
         "author": {
           "@type": "Organization",
           "name": "Jelcos Home Nursing",
@@ -102,6 +109,27 @@ const JelcosApp = () => {
           "ratingValue": "4.9",
           "reviewCount": "128"
         },
+        "audience": {
+          "@type": "Audience",
+          "audienceType": "NRIs, Malayalam-speaking families, Kerala residents, Gulf expatriates"
+        },
+        "areaServed": [
+          "Kerala, India",
+          "Kollam, Kerala",
+          "Kochi, Kerala",
+          "Thiruvananthapuram, Kerala",
+          "Kozhikode, Kerala",
+          "Thrissur, Kerala",
+          "United Arab Emirates",
+          "Saudi Arabia",
+          "Qatar",
+          "Oman",
+          "Kuwait",
+          "United Kingdom",
+          "United States",
+          "Canada",
+          "Australia"
+        ],
         "screenshot": "https://www.jelcos.com/logo.png",
         "sameAs": [
           "https://play.google.com/store/apps/details?id=com.jelcos.app",
